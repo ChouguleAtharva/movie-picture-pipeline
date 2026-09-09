@@ -1,0 +1,6 @@
+.terraform/
+.terraform.lock.hcl
+tools/
+.terraform/
+.terraform.lock.hcl
+tools/
