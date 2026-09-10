@@ -407,6 +407,54 @@ kustomize edit set image backend=<ECR_REPO_URL>:<NEW_TAG_HERE>
 kustomize build | kubectl apply -f -
 ```
 
+## Deployment Verification & Proof of Work
+
+### 1. Live Public Endpoints
+* **Frontend Application URL:** `http://aaf8f53b5251f4e50a6cd6ca88700ba8-1176086782.us-east-1.elb.amazonaws.com`
+* **Backend API URL:** `http://a81a360dbbc0c4d75b93a361eb387e8c-1554307204.us-east-1.elb.amazonaws.com`
+* **Working URL:** `http://aaf8f53b5251f4e50a6cd6ca88700ba8-1176086782.us-east-1.elb.amazonaws.com/`
+
+
+---
+
+### 2. Infrastructure & Pipeline Evidence
+
+#### Infrastructure Provisioning (Terraform)
+![Terraform Apply](screenshots/01_terraform_apply_complete.png)
+
+#### Cluster Authentication & RBAC Configuration
+![Init Script Auth](screenshots/02_init_script_auth.png)
+
+#### GitHub Secret Keys
+![GitHub Secret Keys](screenshots/03_github_secret_keys.png)
+
+#### AWS Credentials
+![AWS Credentials](screenshots/04_aws_credential.png)
+
+#### AWS Users
+![AWS Users](screenshots/05_aws_users.png)
+
+#### Frontend Continuous Integration Pipeline
+![Frontend CI Workflow](screenshots/06_frontend_continuous_integration_success.png)
+
+#### Backend Continuous Integration Pipeline
+![Backend CI Workflow](screenshots/07_backend_continuous_integration_success.png)
+
+#### Backend Continuous Deployment Pipeline
+![Backend CD Workflow](screenshots/08_backend_pipeline_success.png)
+
+#### Frontend Continuous Deployment Pipeline
+![Frontend CD Workflow](screenshots/09_frontend_pipeline_success.png)
+
+#### Kubernetes Workloads Running Status
+![Kubernetes Status](screenshots/10_kubernetes_nodes_and_pods.png)
+
+#### API Testing
+![API Status](screenshots/11_api_success.png)
+
+#### Active Web Application
+![Live Application UI](screenshots/12_live_application_frontend.png)
+
 ## License
 
 [License](LICENSE.md)
